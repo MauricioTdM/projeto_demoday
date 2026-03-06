@@ -1,0 +1,105 @@
+.main {
+    height: 100vh;
+}
+
+.title {
+    height: 8vh;
+    margin: 1% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    h2 {
+        font-weight: 400;
+    }
+
+    @media (max-width: 1405px) {
+        font-size: 20px;
+        height: 10vh;
+    }
+
+    @media (max-width: 1184px) {
+        font-size: 18px;
+        height: 20vh;
+    }
+
+    @media (max-width: 496px) {
+        font-size: 16px;
+    }
+}
+
+.formSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form {
+        border: solid 2px #005695;
+        height: 75vh;
+        width: 561px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 24px;
+
+        @media (max-width: 636px) {
+            width: 80vw;
+        }
+
+        h3 {
+            font-weight: 400;
+
+            @media (max-width: 454px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 331px) {
+                font-size: 18px;
+            }
+        }
+        div {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: #005695;
+
+            @media (max-width: 454px) {
+                width: 98%;
+            }
+        }
+        input {
+            border: solid 2px #005695;
+            width: 401px;
+            height: 6vh;
+            border-radius: 15px;
+            padding-left: 20px;
+            outline: none;
+            font-size: 18px;
+
+            @media (max-width: 636px) {
+                width: 80%;
+                font-size: 14px;
+            }
+
+            &::placeholder {
+                color: #000000;
+                font-weight: 400;
+            }
+        }
+        .doar {
+            background-color: #005695;
+            padding-left: 0;
+            color: #FFFFFF;
+            font-size: 20px;
+            width: 256px;
+            height: 7vh;
+
+            @media (max-width: 636px) {
+                width: 50%;
+            }
+        }
+    }
+}

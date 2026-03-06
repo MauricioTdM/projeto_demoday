@@ -1,0 +1,21 @@
+.bookBox {
+    border: solid 2px #005695;
+    border-radius: 20px;
+    width: 254px;
+    height: 323px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    img {
+        width: 121px;
+    }
+    section {
+        width: 80%;
+        height: 10vh;
+        text-align: center;
+        p {
+            padding: 3%;
+        }
+    }
+}

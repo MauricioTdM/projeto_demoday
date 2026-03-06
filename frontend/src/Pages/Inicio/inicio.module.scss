@@ -1,0 +1,77 @@
+.banner {
+    height: 83vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../../assets/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (max-width: 925px) {
+        background-image: url('../../assets/smallBanner.png');
+        justify-content: center;
+    }
+    h2 {
+        margin-left: 10%;
+        color: #FFFFFF;
+        width: 18vw;
+        font-size: 40px;
+
+        @media (max-width: 1440px) {
+            width: 26vw;
+        }
+
+        @media (max-width: 1043px) {
+            width: 32vw;
+        }
+
+        @media (max-width: 925px) {
+            width: 80vw;
+            text-align: center;
+        }
+    }
+}
+
+.boxDonate {
+    height: 85vh;
+    div {
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        color: #005695;
+        font-size: 30px;
+        margin-left: 5%;
+
+        @media (max-width: 517px) {
+            justify-content: center;
+            height: 14vh;
+            font-size: 20px;
+        }
+    }
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        @media (max-width: 936px) {
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 0 6%;
+        }
+    }
+
+    @media (max-width: 1440px) {
+        height: 70vh;
+    }
+
+    @media (max-width: 1024px) {
+        height: 66vh;
+    }
+
+    @media (max-width: 936px) {
+        height: 100vh;
+    }
+
+    @media (max-width: 517px) {
+        height: 175vh;
+    }
+}
