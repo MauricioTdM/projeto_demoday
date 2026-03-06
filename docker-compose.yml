@@ -3,7 +3,10 @@ version: '3.8'
 services:
   # 1. Nosso Garçom (O Frontend)
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: "http://localhost:5000"
     container_name: app-frontend
     ports:
       - "3010:80"

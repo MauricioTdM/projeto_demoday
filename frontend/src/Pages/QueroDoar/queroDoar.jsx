@@ -11,7 +11,7 @@ export default function QueroDoar() {
     const [imagem_url, setImagem_url] = useState("")
 
     const enviarDados = async() => {
-        const urlApi = "https://desafio-2-api-livros-vai-na-web-z4jx.onrender.com/doar"
+        const urlApi = `${import.meta.env.VITE_API_URL}/doar`
 
         const dadosEnviar = {
             titulo,

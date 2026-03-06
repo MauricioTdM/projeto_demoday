@@ -10,7 +10,7 @@ export default function Doados() {
     const [livros, setLivros] = useState([])
 
     const getLivros = async () => {
-        const response = await axios.get("https://desafio-2-api-livros-vai-na-web-z4jx.onrender.com/livros")
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/livros`)
         setLivros(response.data)
         
     }
