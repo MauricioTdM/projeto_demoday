@@ -28,6 +28,20 @@ jobs:
       
     - name: Testar o Build do React
       run: npm run build
+    
+    - name: Aviso de Sucesso no Discord ✅
+      if: success()
+      run: |
+        curl -H "Content-Type: application/json" \
+        -d '{"content": "✅ **SUCESSO:** O build do **FRONTEND** passou com perfeição! O código está pronto para produção."}' \
+        ${{ secrets.DISCORD_WEBHOOK }}
+
+    - name: Alerta de Erro no Discord 🚨
+      if: failure()
+      run: |
+        curl -H "Content-Type: application/json" \
+        -d '{"content": "🚨 **ALERTA DE CI:** O build do **FRONTEND** falhou no GitHub Actions! Verifique os logs."}' \
+        ${{ secrets.DISCORD_WEBHOOK }}
 
   # TRABALHO 2: Validar o Backend (Python/Flask)
   build-backend:
@@ -50,3 +64,17 @@ jobs:
       
     - name: Verificar sintaxe do código (Garante que não há erros fatais)
       run: python -m py_compile app.py
+    
+    - name: Aviso de Sucesso no Discord ✅
+      if: success()
+      run: |
+        curl -H "Content-Type: application/json" \
+        -d '{"content": "✅ **SUCESSO:** O build do **BACKEND** passou com perfeição! O código está pronto para produção."}' \
+        ${{ secrets.DISCORD_WEBHOOK }}
+    
+    - name: Alerta de Erro no Discord 🚨
+      if: failure()
+      run: |
+        curl -H "Content-Type: application/json" \
+        -d '{"content": "🚨 **ALERTA DE CI:** O build do **BACKEND** falhou no GitHub Actions! Verifique os logs."}' \
+        ${{ secrets.DISCORD_WEBHOOK }}
