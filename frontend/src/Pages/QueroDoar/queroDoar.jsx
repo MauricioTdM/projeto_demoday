@@ -10,6 +10,8 @@ export default function QueroDoar() {
     const [autor, setAutor] = useState("")
     const [imagem_url, setImagem_url] = useState("")
 
+    console.log(variavelQueNaoExiste)
+
     const enviarDados = async() => {
         const urlApi = `${import.meta.env.VITE_API_URL}/doar`
 
