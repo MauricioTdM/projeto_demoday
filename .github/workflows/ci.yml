@@ -1,0 +1,52 @@
+name: CI Pipeline - Demoday
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # TRABALHO 1: Validar o Frontend (React/Vite)
+  build-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+    
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        
+    - name: Instalar dependências (Clean Install)
+      run: npm ci
+      
+    - name: Testar o Build do React
+      run: npm run build
+
+  # TRABALHO 2: Validar o Backend (Python/Flask)
+  build-backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Instalar dependências do Python
+      run: pip install -r requirements.txt
+      
+    - name: Verificar sintaxe do código (Garante que não há erros fatais)
+      run: python -m py_compile app.py
