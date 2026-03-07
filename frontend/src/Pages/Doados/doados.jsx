@@ -15,6 +15,8 @@ export default function Doados() {
         
     }
 
+    console.log(variavelTeste)
+
     useEffect(() => {
         getLivros()
     },[])
